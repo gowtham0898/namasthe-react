@@ -1,0 +1,15 @@
+{
+  "name": "namasthe-react",
+  "version": "1.0.0",
+  "description": "study react with namsathe dev",
+  "main": "app.js",
+  "scripts": {
+    "test": "just"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/gowtham0898/namasthe-react)"
+  },
+  "author": "Gowtham S",
+  "license": "ISC"
+}
