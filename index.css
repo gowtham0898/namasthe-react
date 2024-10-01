@@ -1,3 +1,38 @@
-#heading{
-color: brown;
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+
+}
+
+.items{
+    display: flex;
+  
+}
+.nav-items > ul > li {
+    list-style: none;
+}
+
+.items > li {           
+    padding: 20px;
+    font-size: 25px;
+}
+.filter-btn{
+    margin: 5px;
+}
+
+.card-container{
+    margin: 10px;
+    width: 200px;
+    background-color: #dae2e0;
+    padding: 10px;
+}
+.card-container:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
 }

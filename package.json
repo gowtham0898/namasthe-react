@@ -4,7 +4,9 @@
   "description": "study react with namsathe dev",
   
   "scripts": {
-    "test": "just"
+    "test": "just",
+    "start" : "parcel index.html",
+    "build" : "parcel build index.html"
   },
   "repository": {
     "type": "git",
