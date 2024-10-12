@@ -2,8 +2,8 @@ import React from 'react';
 import AccordionMenuItems from './AccordionMenuItems';
 
 const AccordionMenu = ({title, content, isOpen, onToggle }) => {
-    //console.log("accordient items",content);
-   
+    console.log("accordient items",onToggle);
+    
     return (
       <div className="container mx-auto p-4">
         <div className="mx-auto">

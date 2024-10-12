@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import RestorentCard, { openStatusResto } from './RestorentCard'
 import { useState,useEffect } from 'react'
 import Shimmer from './Shimmer'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from "../utils/useOnlineStatus"
+import UserContext from '../utils/UserContext'
 
 const Body = () => {
 
@@ -18,6 +19,7 @@ const Body = () => {
      const[restorentName,setRestoName] = useState(null);
     const onlineStatus = useOnlineStatus();
     const OpenStatus = openStatusResto(RestorentCard);
+    const{userName,setUserAuthName} = useContext(UserContext);
    
     const setNewList = () => {
         let filteredList = restoLists.filter((rest) => rest.info.avgRating > 4.3);
@@ -116,7 +118,8 @@ const Body = () => {
             <h1>seema like your internet connection is off/low !!</h1>
         );
     
-       // console.log(restoLists);
+        console.log(restoLists);
+        // console.log(restoLists);
     return restoLists.length === 0 ? (
       <Shimmer />
     ) : (
@@ -151,6 +154,15 @@ const Body = () => {
             }}>
             UnSet
           </button>
+          <label className="py-2 ml-3">Username : </label>
+          <input
+            className="border-2 border-orange-200 rounded-lg py-2 px-4 mx-2 focus:outline-none focus:border-orange-500 transition duration-200"
+            value={userName}
+            onChange={(e) => setUserAuthName(e.target.value)
+              
+            }
+            placeholder="Set User Name"
+          />
         </div>
 
         <div className="flex flex-wrap">

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { CDN_URL } from '../utils/constants';
 const RestorentCard = (props) => {
   
-    console.log(props);
+    //console.log(props);
     
     const {name,cloudinaryImageId,cuisines,avgRating,sla} = props.restoData.info;
 

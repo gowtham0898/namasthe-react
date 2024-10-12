@@ -4,7 +4,7 @@ import useRestorentMenu from "../utils/useRestorentMenu";
 import AccordionMenu from "./AccordionMenu";
 import { useState } from "react";
 const RestorentManu = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openName, setOpenName] = useState(null);
 
     const {resId} = useParams();
     //#region  to create saperate custom hook to featch data
@@ -28,7 +28,7 @@ const RestorentManu = () => {
     
     const getCardMenu = useRestorentMenu(resId);
     const location = useLocation();
-    console.log("resto Card",location);
+    //console.log("resto Card",location);
     
     const {name}  =  location.state ||{};
 
@@ -40,32 +40,27 @@ const RestorentManu = () => {
 
     const getCardMenuForEachTitle = getCardMenu[2]?.card?.card?.itemCards;
 
-    //console.log(getCardMenu);
-
-    const toggleItem = (index) => {
-      setOpenIndex(openIndex === index ? null : index);
+    
+    const toggleItem = (name) => {
+      
+      setOpenName(openName === name ? null : name);
+      
   };
-  //   <div key = {menu.card.info.id}>
-  //   <div className="menu-items">
-  //     <p>{menu.card.info.name} (Rs : {menu.card.info.price})</p>
-  //     <div>  <p> <b>description:</b> {menu.card.info.description} </p></div>
-  //    <hr />
-  //   </div>
-  // </div>
+  console.log("open_INDEX_after_set",openName);
     return (
       <div className="menu">
         <div className="m-8 ml-40 text-xl">
           {/* <b>{name}</b> */}
         </div>
         {filteredItems.map((menu,index) => (
+          
           <AccordionMenu 
-          key={index} 
+          key={menu?.card?.card?.title} 
           title={menu?.card?.card?.title}
           content = {menu?.card?.card?.itemCards}
-          isOpen={openIndex === index}
-          onToggle={() => toggleItem(index)}
+          isOpen={openName === menu?.card?.card?.title}
+          onToggle={() => toggleItem(menu?.card?.card?.title)}
           />
-         
         ))}
       </div>
     );
